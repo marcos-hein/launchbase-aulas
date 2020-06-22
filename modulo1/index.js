@@ -1,69 +1,89 @@
-// Criar um programa que calcula a média
-// das turmas de alunos e envia
-// mensagem do cáculo da média
-
-
-const alunosDaTurmaA = [
+const classA = [
     {
-        nome: "Mayk",
-        nota: 1.8
+        name: "Mayk",
+        grade: 9.8
     },
     {
-        nome: "Diego",
-        nota: 10
+        name: "Diego",
+        grade: 10
     },
     {
-        nome: "Fulano",
-        nota: 2
+        name: "Fulano",
+        grade: 2
     },
     {
-        nome: "Mais um Aluno",
-        nota: 10
+        name: "Mais um student",
+        grade: 10
     }
 ]
 
-const alunosDaTurmaB = [
+const classB = [
     {
-        nome: "Cleiton",
-        nota: 10
+        name: "Cleiton",
+        grade: 10
     },
     {
-        nome: "Robson",
-        nota: 10
+        name: "Robson",
+        grade: 10
     },
     {
-        nome: "Ciclano",
-        nota: 0
+        name: "Ciclano",
+        grade: 0
     },
     {
-        nome: "Novo Aluno",
-        nota: 9
+        name: "Novo student",
+        grade: 9
     }
 ]
 
-function calculaMedia(alunos) {
-    let soma = 0;
-    for(let i = 0; i < alunos.length; i++ ){
-        soma = soma + alunos[i].nota
+function calculateAverage(students) {
+    let sum = 0;
+
+    for (let i = 0; i < students.length; i++) {
+        sum = sum + students[i].grade
     }
 
 
-    const media = soma / alunos.length
-    return media
+    const average = sum / students.length
+
+    return average
 }
 
-const media1 = calculaMedia(alunosDaTurmaA)
-const media2 = calculaMedia(alunosDaTurmaB)
-
-function enviaMensagem(media, turma){
-    // Se a média for maior que 5, parabenizar a turma
-    if (media > 5) {
-        console.log(`A media da turma ${turma} foi de ${media}. Parabés!`)
+function sendMenssage(average, turma) {
+    if (average > 5) {
+        console.log(`${turma} average: ${average}. Congrats!`)
     } else {
-        console.log(`A média da turma ${turma} é menor que 5`)
+        console.log(`${turma} average: ${average}. Is not good.`)
     }
 }
 
-enviaMensagem(media1, 'turmaA')
-enviaMensagem(media2, 'turmaB')
+function markAsFlunked(student) {
+    student.flunked = false
 
+    if (student.grade < 5) {
+        student.flunked = true
+    }
+}
+
+function sendFlunkedMessage(student) {
+    if (student.flunked) {
+        console.log(`${student.name} flunked!`)
+    }
+}
+
+function flukedStudents(students) {
+    for (let student of students) {
+        markAsFlunked(student)
+        sendFlunkedMessage(student)
+    }
+}
+
+
+const average1 = calculateAverage(classA)
+const average2 = calculateAverage(classB)
+
+sendMenssage(average1, 'classA')
+sendMenssage(average2, 'classB')
+
+flukedStudents(classA)
+flukedStudents(classB)
