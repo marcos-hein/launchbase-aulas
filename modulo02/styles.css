@@ -120,6 +120,7 @@ header div a:hover {
     border-radius: 20px;
     padding: 5px 20px;
     text-align: center;
+<<<<<<< HEAD
 }
 
 /* ===== MODAL ===== */
@@ -155,4 +156,6 @@ header div a:hover {
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
+=======
+>>>>>>> 0e59f076e2e44dffbb054019aff7554df2290494
 }
