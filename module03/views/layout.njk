@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+        {% block head %}    
+            <title>Vinicius Hein</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/">Sobre</a>
+                <a href="/portifolio">Portifólio</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+    </body>
+
+</html>
