@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
     <title>Portifólio - Vinicius Hein</title>
@@ -14,85 +14,20 @@
         </div>
 
         <section class="cards">
-
-            <div class="card" id="GykTLqODQuU">
+            {% for item in items %}
+            <div class="card" id="{{item.id}}">
                 <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Video Aula">
+                    <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
                 </div>
                 <div class="card_content">
-                    <p>Formulário Animado com JS puro CSS Animation | AMyk Britto</p>
+                    <p>{{item.title}}</p>
                 </div>
                 <div class="card_info">
-                    <p>57 min</p>
-                    <p class="card_price">Free</p>
+                    <p>{{item.duration}}</p>
+                    <p class="card_price">{{item.price}}</p>
                 </div>
-            </div>
-
-            <div class="card" id="3cjdQOuSJoU">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Video Aula">
-                </div>
-                <div class="card_content">
-                    <p>Formulário Animado com JS puro CSS Animation | AMyk Britto</p>
-                </div>
-                <div class="card_info">
-                    <p>57 min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="GykTLqODQuU">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Video Aula">
-                </div>
-                <div class="card_content">
-                    <p>Formulário Animado com JS puro CSS Animation | AMyk Britto</p>
-                </div>
-                <div class="card_info">
-                    <p>57 min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="GykTLqODQuU">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Video Aula">
-                </div>
-                <div class="card_content">
-                    <p>Formulário Animado com JS puro CSS Animation | AMyk Britto</p>
-                </div>
-                <div class="card_info">
-                    <p>57 min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="GykTLqODQuU">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Video Aula">
-                </div>
-                <div class="card_content">
-                    <p>Formulário Animado com JS puro CSS Animation | AMyk Britto</p>
-                </div>
-                <div class="card_info">
-                    <p>57 min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-
-            <div class="card" id="GykTLqODQuU">
-                <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/GykTLqODQuU/maxresdefault.jpg" alt="Video Aula">
-                </div>
-                <div class="card_content">
-                    <p>Formulário Animado com JS puro CSS Animation | AMyk Britto</p>
-                </div>
-                <div class="card_info">
-                    <p>57 min</p>
-                    <p class="card_price">Free</p>
-                </div>
-            </div>
-            
+            </div>           
+            {% endfor %}
 
         </section>
 
