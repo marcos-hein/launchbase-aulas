@@ -99,6 +99,7 @@ header div a:hover {
 .card {
     background-color: var(--color-rocker);
     display: grid;
+    cursor: pointer;
 }
 
 .card_image-container img {
@@ -165,4 +166,20 @@ iframe {
     height: 90%;
     position: absolute;
     top: 5%;
+}
+
+/* ===== FEATURED ===== */
+
+.featured-wrapper.card_image-container {
+    position: relative;
+}
+
+.featured {
+    background: #f7d05f;
+    color: #111;
+    padding: 2px 8px;
+    position: absolute;
+    right: 5px;
+    border-radius: 16px;
+    top: 131px;
 }
