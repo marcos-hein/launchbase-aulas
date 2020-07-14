@@ -5,7 +5,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
-{% endblock %}
+{% endblock head %}
 
 {% block content %}
 
@@ -15,16 +15,16 @@
 
         <section class="cards">
             {% for item in items %}
-            <div class="card" id="{{item.id}}">
+            <div class="card" id="{{ item.id }}">
                 <div class="card_image-container">
-                    <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
+                    <img src="https://img.youtube.com/vi/{{ item.id }}/maxresdefault.jpg" alt="Imagem de {{ item.title }}">
                 </div>
                 <div class="card_content">
-                    <p>{{item.title}}</p>
+                    <p>{{ item.title }}</p>
                 </div>
                 <div class="card_info">
-                    <p>{{item.duration}}</p>
-                    <p class="card_price">{{item.price}}</p>
+                    <p>{{ item.duration }}</p>
+                    <p class="card_price">{{ item.price }}</p>
                 </div>
             </div>           
             {% endfor %}
@@ -45,4 +45,4 @@
         
         <script src="scripts.js"></script>
 
-{% endblock %}
+{% endblock content %}
