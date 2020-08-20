@@ -12,13 +12,30 @@ exports.post = function(req, res) {
         }
     }
 
-    data.instructors.push(req.body, null, 2)
+    let { avatar_url, birth, name, services,gender } = req.body
 
-    fs.writeFile("data.json", JSON.stringify(data), function(err) {
-        if (err) return res.send('Write file error')
 
-        console.log('redirecionando....')
-        return res.redirect('/instructors')
+    birth = Date.parse(birth)
+    const create_at = Date.now()
+    const id = Number(data.instructors.length + 1)
+
+
+    data.instructors.push({
+        id,
+        avatar_url,
+        name,
+        birth,
+        gender,
+        services,
+        create_at
+    })
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 4), function(err) {
+        if (err) {
+            return res.send('Write file error')
+        }
+
+        return res.redirect("/instructors")
     })
 
     // return res.send(req.body)
