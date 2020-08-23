@@ -1,5 +1,5 @@
-const fs = require('fs')
-const data = require('./data.json')
+const fs = require("fs")
+const data = require("./data.json")
 
 // create
 exports.post = function(req, res) {
@@ -8,7 +8,7 @@ exports.post = function(req, res) {
 
     for (key of keys) {
         if (req.body[key] == "") {
-            return res.send('Please, fill all fields')
+            return res.send("Please, fill all fields")
         }
     }
 
@@ -32,12 +32,9 @@ exports.post = function(req, res) {
 
     fs.writeFile("data.json", JSON.stringify(data, null, 4), function(err) {
         if (err) {
-            return res.send('Write file error')
+            return res.send("Write file error")
         }
 
         return res.redirect("/instructors")
     })
-
-    // return res.send(req.body)
-
 }
