@@ -12,7 +12,14 @@ exports.show = function(req, res) {
 
     if (!foundInstructor) return res.send('Instructor not found!')
 
-    return res.send(foundInstructor)
+    const instructor = {
+        ...foundInstructor,
+        age: "",
+        services: foundInstructor.services.split(","),
+        created_at: "",
+    }
+
+    return res.render("./instructors/show", { instructor })
 }
 
 // create
@@ -30,7 +37,7 @@ exports.post = function(req, res) {
 
 
     birth = Date.parse(birth)
-    const create_at = Date.now()
+    const created_at = Date.now()
     const id = Number(data.instructors.length + 1)
 
 
@@ -41,7 +48,7 @@ exports.post = function(req, res) {
         birth,
         gender,
         services,
-        create_at
+        created_at
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 4), function(err) {

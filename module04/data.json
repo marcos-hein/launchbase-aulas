@@ -6,16 +6,16 @@
             "name": "Marcos",
             "birth": 3762943959600000,
             "gender": "M",
-            "services": "asd",
+            "services": "natação, musculação, crossfit",
             "create_at": 1597917558290
         },
         {
             "id": 2,
             "avatar_url": "https://google.com",
-            "name": "Marcos Vinicius Hein Pereira",
+            "name": "Vinicius",
             "birth": 728524800000,
-            "gender": "M",
-            "services": "Dev",
+            "gender": "F",
+            "services": "musculação, pilates",
             "create_at": 1597968816913
         }
     ]
