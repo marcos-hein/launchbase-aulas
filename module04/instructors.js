@@ -1,6 +1,7 @@
 const fs = require("fs")
 const data = require("./data.json")
 const { age, date } = require("./utils")
+const { UV_FS_O_FILEMAP } = require("constants")
 
 // show
 exports.show = function(req, res) {
@@ -108,5 +109,22 @@ exports.put = function(req, res) {
         if (err) return res.send('Write error!')
 
         return res.redirect(`/instructors/${id}`)
+    })
+}
+
+// delete
+exports.delete = function(req, res) {
+    const { id } = req.body
+
+    const filteredInstructors = data.instructors.filter(function(instructor) {
+        return instructor.id != id
+    })
+
+    data.instructors = filteredInstructors
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send("Write file error!")
+
+        return res.redirect("/instructors")
     })
 }
