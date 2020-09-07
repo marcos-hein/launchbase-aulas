@@ -3,6 +3,18 @@ const data = require("./data.json")
 const { age, date } = require("./utils")
 const { UV_FS_O_FILEMAP } = require("constants")
 
+exports.index = function(req, res) {
+
+    const instructors = data.instructors.map(function(instructor) {
+        return {
+            ...instructor,
+            services: instructor.services.split(","),
+        }
+    })
+
+    return res.render("instructors/index", { instructors })
+}
+
 // show
 exports.show = function(req, res) {
     // req.params
