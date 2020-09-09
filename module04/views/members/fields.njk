@@ -5,19 +5,29 @@
                 type="url"
                 name="avatar_url"
                 placeholder="https://"
-                value="{{instructor.avatar_url}}"
+                value="{{ member.avatar_url }}"
             >
         </div>
     </div>
 
     <div class="item">
-        <div>Instrutor</div>
+        <div>Nome</div>
         <div>
             <input
                 type="text"
                 name="name"
-                placeholder="Nome do instrutor"
-                value="{{instructor.name}}"
+                value="{{ member.name }}"
+            >
+        </div>
+    </div>
+
+    <div class="item">
+        <div>Email</div>
+        <div>
+            <input
+                type="email"
+                name="email"
+                value="{{ member.email }}"
             >
         </div>
     </div>
@@ -28,7 +38,7 @@
             <input 
                 type="date"
                 name="birth"
-                value="{{instructor.birth}}"
+                value="{{ member.birth }}"
             >
         </div>
     </div>
@@ -36,22 +46,22 @@
     <div class="item">
         <div>Sexo</div>
         <div>
-            <span>
+            <span class="gender">
                 <input
                     type="radio"
                     name="gender" 
                     value="M"
-                    {% if instructor.gender == 'M' %}
+                    {% if member.gender == 'M' %}
                         checked
                     {% endif %}
                     > Masculino
             </span>
-            <span>
+            <span class="gender">
                 <input 
                     type="radio" 
                     name="gender" 
                     value="F"
-                    {% if instructor.gender == 'F' %}
+                    {% if member.gender == 'F' %}
                         checked
                     {% endif %}
                 > Feminino
@@ -60,15 +70,58 @@
     </div>
 
     <div class="item">
-        <div>Área de atuação</div>
+        <div>Tipo Sanguíneo</div>
+        <div>
+            <select name="blood">
+                <option value="A1" {% if member.blood == "A" %} selected {% endif %}>
+                    A+
+                </option>
+                <option value="A0" {% if member.blood == "A" %} selected {% endif %}>
+                    A-
+                </option>
+                <option value="B1" {% if member.blood == "A" %} selected {% endif %}>
+                    B+
+                </option>
+                <option value="B0" {% if member.blood == "A" %} selected {% endif %}>
+                    B-
+                </option>
+                <option value="AB1" {% if member.blood == "A" %} selected {% endif %}>
+                    AB+
+                </option>
+                <option value="AB0" {% if member.blood == "A" %} selected {% endif %}>
+                    AB-
+                </option>
+                <option value="O1" {% if member.blood == "A" %} selected {% endif %}>
+                    O+
+                </option>
+                <option value="O0" {% if member.blood == "A" %} selected {% endif %}>
+                    O-
+                </option>
+
+            </select>
+        </div>
+
+    <div class="item">
+        <div>Peso (Kg)</div>
         <div>
             <input
-                type="text"
-                name="services"
-                placeholder="Separe os serviços prestados por vírgula"
-                value="{{instructor.services}}"
+                type="number"
+                name="weight"
+                value="{{ member.wieght }}"
             >
         </div>
+    </div>
+
+    <div class="item">
+        <div>Altura (cm)</div>
+        <div>
+            <input
+                type="number"
+                name="height"
+                value="{{ member.height }}"
+            >
+        </div>
+    </div>
 
         <button type="submit">Salvar</button>
 
