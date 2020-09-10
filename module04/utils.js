@@ -1,3 +1,5 @@
+
+
 module.exports = {
     age: function(timestamp) {
         const today = new Date()
@@ -25,5 +27,23 @@ module.exports = {
         console.log(`${year}-${month}-${day}`)
 
         return `${year}-${month}-${day}`
+    },
+    showBlood: function(blood) {
+        const bloodTypes = {
+            A1: "A+",
+            A0: "A-",
+            B1: "B+",
+            B0: "B-",
+            AB1: "AB+",
+            AB0: "AB-",
+            O1: "O+",
+            O0: "O-",
+        }
+        
+        for (const type in bloodTypes) {
+            if (type == blood) {
+                return bloodTypes[type]
+            }
+        }
     }
 }
