@@ -26,7 +26,10 @@ module.exports = {
 
         console.log(`${year}-${month}-${day}`)
 
-        return `${year}-${month}-${day}`
+        return {
+            iso: `${year}-${month}-${day}`,
+            birthDay: `${day}/${month}`
+            }
     },
     showBlood: function(blood) {
         const bloodTypes = {
