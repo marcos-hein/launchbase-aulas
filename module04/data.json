@@ -1,7 +1,7 @@
 {
   "members": [
     {
-      "id": "1",
+      "id": 1,
       "avatar_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fhuman&psig=AOvVaw02xTC0are4GHgyANhOL00S&ust=1599782694429000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMCg6Yul3esCFQAAAAAdAAAAABAD",
       "name": "Carlos",
       "email": "vinicius.hein@gmail.com",
@@ -23,31 +23,22 @@
       "create_at": 1597968816913
     },
     {
-      "id": 3,
-      "avatar_url": "https://source.unsplash.com/collection/8969654/500x500",
-      "name": "Marcos Vinicius",
-      "birth": 751075200000,
-      "gender": "M",
-      "services": "Musculação",
-      "created_at": 1598317676148
-    },
-    {
-      "id": 4,
-      "avatar_url": "https://source.unsplash.com/collection/8969654/500x500",
-      "name": "Marcos Vinicius",
-      "birth": 753753600000,
-      "gender": "M",
-      "services": "Musculação",
-      "created_at": 1598317868139
-    },
-    {
-      "id": "5",
+      "id": 5,
       "avatar_url": "https://source.unsplash.com/collection/8969654/500x500",
       "name": "Marcos",
       "birth": 708998400000,
       "gender": "M",
       "services": "Musculação",
       "created_at": 1598318054181
+    },
+    {
+      "id": "6",
+      "avatar_url": "https://img.elo7.com.br/product/original/1C2F3A1/lulu-da-pomerania-spitz-alemao-miniatura-de-cachorro-la.jpg",
+      "name": "Camila Morais",
+      "birth": 751680000000,
+      "gender": "F",
+      "services": "Pilates, Flyoga",
+      "created_at": 1599786275959
     }
   ]
 }
