@@ -146,12 +146,16 @@ span.gender {
 
 /* ===== FORM ===== */
 
-input {
+input, select {
     width: 100%;
     outline: none;
     color: #555555;
     font-weight: bold;
     font-size: 18px;
+}
+
+select {
+    background-color: white;
 }
 
 input[type="radio"] {
