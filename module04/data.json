@@ -14,15 +14,6 @@
   ],
   "instructors": [
     {
-      "id": 2,
-      "avatar_url": "https://source.unsplash.com/collection/8969654/500x500",
-      "name": "Vinicius",
-      "birth": 728524800000,
-      "gender": "F",
-      "services": "musculação, pilates",
-      "create_at": 1597968816913
-    },
-    {
       "id": 5,
       "avatar_url": "https://source.unsplash.com/collection/8969654/500x500",
       "name": "Marcos",
@@ -30,15 +21,6 @@
       "gender": "M",
       "services": "Musculação",
       "created_at": 1598318054181
-    },
-    {
-      "id": "6",
-      "avatar_url": "https://img.elo7.com.br/product/original/1C2F3A1/lulu-da-pomerania-spitz-alemao-miniatura-de-cachorro-la.jpg",
-      "name": "Camila Morais",
-      "birth": 751680000000,
-      "gender": "F",
-      "services": "Pilates, Flyoga",
-      "created_at": 1599786275959
     }
   ]
 }
