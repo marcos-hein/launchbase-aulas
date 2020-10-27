@@ -42,23 +42,28 @@ module.exports = {
 
     },    
     edit(req, res) {
-        return
+        Instructor.find(req.params.id, function(instructor) {
+            if (!instructor) return res.send("Instructor not found!")
+
+            instructor.birth = date(instructor.birth).iso
+            
+            return res.render("instructors/edit", { instructor })
+        })
     },    
     put(req, res) {
-        const { id } = req.body
-    
-        let index = 0
-    
-        const foundInstructor = data.instructors.find(function(instructor, foundIndex){
-            if (id == instructor.id) {
-                index = foundIndex
-                return true
+        const keys = Object.keys(req.body)
+
+        for(key of keys) {
+            if (req.body[key] == "") {
+                return res.send("Please, fill all fields!")
             }
+        }
+
+        Instructor.update(req.body, function() {
+            return res.redirect(`/instructors/${req.body.id}`)
         })
-    
-        if (!foundInstructor) return res.send('Instructor not found!')
-    
-       return
+
+
     },    
     delete(req, res) {
         return
